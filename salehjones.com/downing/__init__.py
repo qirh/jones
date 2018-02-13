@@ -1,3 +1,5 @@
+#!/usr/bin/python2.7
+
 import os
 import requests
 from flask import Flask, render_template, request, json, jsonify
@@ -14,74 +16,71 @@ from models import *
 
 @app.route ( '/' )
 def homepage ():
-	return render_template('index.html',
-							title='Downing Jones')
+    return render_template('index.html', title='Downing Jones')
 
 @app.route ( '/index' )
 def index ():
-	return render_template('index.html',
-						    title='Downing Jones')
+    return render_template('index.html', title='Downing Jones')
 
 @app.route ( '/about' )
 def about ():
-	return render_template('about.html',
-                            title='About')
+    return render_template('about.html', title='About')
 
 @app.route ( '/companies' )
 def companies ():
     companies = Company.query.distinct(Company.symbol)
     return render_template('companies.html',
-                            title='Companies',
-                            companies=companies)
+                           title='Companies',
+                           companies=companies)
 
 @app.route ( '/companies/<id>' )
 def company (id):
     company = Company.query.get(id)
     return render_template('company.html',
-                            title=company.name,
-                            company=company)
+                           title=company.name,
+                           company=company)
 
 @app.route ( '/currencies' )
 def currencies ():
-	currencies = Currency.query.distinct(Currency.currency)
-	return render_template('currencies.html',
-							title='Currencies',
-							currencies=currencies)
+    currencies = Currency.query.distinct(Currency.currency)
+    return render_template('currencies.html',
+                           title='Currencies',
+                           currencies=currencies)
 
 @app.route ( '/currencies/<id>' )
 def currency (id):
     currency = Currency.query.get(id)
     return render_template('currency.html',
-                            title=currency.name,
-                            currency=currency)
+                           title=currency.name,
+                           currency=currency)
 
 @app.route ( '/locations' )
 def locations ():
-	locations = Location.query.distinct(Location.name)
-	return render_template('locations.html',
-						    title='Locations',
-						    locations=locations)
+    locations = Location.query.distinct(Location.name)
+    return render_template('locations.html',
+                           title='Locations',
+                           locations=locations)
 
 @app.route ( '/locations/<id>' )
 def location (id):
     location = Location.query.get(id)
     return render_template('location.html',
-                            title=location.name,
-                            location=location)
+                           title=location.name,
+                           location=location)
 
 @app.route ( '/stockmarkets' )
 def stockmarkets ():
-	markets = Exchange.query.distinct(Exchange.name)
-	return render_template('stockmarkets.html',
-							title='Exchanges',
-							markets=markets)
+    markets = Exchange.query.distinct(Exchange.name)
+    return render_template('stockmarkets.html',
+                           title='Exchanges',
+                           markets=markets)
 
 @app.route ( '/stockmarkets/<id>' )
 def market (id):
     market = Exchange.query.get(id)
     return render_template('stockmarket.html',
-                            title=market.name,
-                            market=market)
+                           title=market.name,
+                           market=market)
 
 
 @app.route ( '/api/run_tests')
@@ -149,10 +148,10 @@ def get_company(id):
 
 @app.route ('/api', methods=['GET'])
 def get_entry_points():
-  return jsonify(exchange_url = "/exchange",
-                 company_url = "/company",
-                 location_url = "/location",
-                 currency_url = "/currency")
+    return jsonify(exchange_url = "/exchange",
+                   company_url = "/company",
+                   location_url = "/location",
+                   currency_url = "/currency")
 
 
 """
@@ -177,8 +176,8 @@ def search ():
     search_queryand4 = Company.query.filter(or_(Company.symbol.contains(andqueries[0]),Company.name.contains(andqueries[0]),Company.exchange.contains(andqueries[0]),Company.currency.contains(andqueries[0]),Company.location.contains(andqueries[0]),Company.open_price.contains(andqueries[0]),Company.previous_price.contains(andqueries[0]),Company.percent_change.contains(andqueries[0]),Company.year_high.contains(andqueries[0]),Company.ask_price.contains(andqueries[0]),Company.eps.contains(andqueries[0]),Company.peg.contains(andqueries[0]),Company.percent_change_fifty.contains(andqueries[0]),Company.volume.contains(andqueries[0]),Company.avg_volume.contains(andqueries[0]),Company.market_cap.contains(andqueries[0])))
     index = 0
     for x in thisString:
-      hackString += thisString[index]
-      index = index + 1
+        hackString += thisString[index]
+        index = index + 1
     hackString = hackString.split(" ")
     queries = hackString
     index2 = 0
@@ -187,10 +186,10 @@ def search ():
     search_queryor3 = []
     search_queryor4 = []
     for i in queries:
-      search_queryor1 += Location.query.filter(or_(Location.name.contains(queries[index2]),Location.iso.contains(queries[index2]), Location.capital.contains(queries[index2]),Location.gdp.contains(queries[index2]),Location.currency.contains(queries[index2]), Location.location_exchange.contains(queries[index2])))
-      search_queryor2 += Exchange.query.filter(or_(Exchange.exchange.contains(queries[index2]),Exchange.name.contains(queries[index2]),Exchange.market_cap_exchange.contains(queries[index2]),Exchange.currency.contains(queries[index2]),Exchange.location.contains(queries[index2])))
-      search_queryor3 += Currency.query.filter(or_(Currency.name.contains(queries[index2]),Currency.currency.contains(queries[index2]),Currency.locations.contains(queries[index2]),Currency.exchanges.contains(queries[index2]), Currency.exchange_rate.contains(queries[index2])))
-      search_queryor4 += Company.query.filter(or_(Company.symbol.contains(queries[index2]),Company.name.contains(queries[index2]),Company.exchange.contains(queries[index2]),Company.currency.contains(queries[index2]),Company.location.contains(queries[index2]),Company.open_price.contains(queries[index2]),Company.previous_price.contains(queries[index2]),Company.percent_change.contains(queries[index2]),Company.year_high.contains(queries[index2]),Company.ask_price.contains(queries[index2]),Company.eps.contains(queries[index2]),Company.peg.contains(queries[index2]),Company.percent_change_fifty.contains(queries[index2]),Company.volume.contains(queries[index2]),Company.avg_volume.contains(queries[index2]),Company.market_cap.contains(queries[index2])))
-      index2 = index2 + 1
+        search_queryor1 += Location.query.filter(or_(Location.name.contains(queries[index2]),Location.iso.contains(queries[index2]), Location.capital.contains(queries[index2]),Location.gdp.contains(queries[index2]),Location.currency.contains(queries[index2]), Location.location_exchange.contains(queries[index2])))
+        search_queryor2 += Exchange.query.filter(or_(Exchange.exchange.contains(queries[index2]),Exchange.name.contains(queries[index2]),Exchange.market_cap_exchange.contains(queries[index2]),Exchange.currency.contains(queries[index2]),Exchange.location.contains(queries[index2])))
+        search_queryor3 += Currency.query.filter(or_(Currency.name.contains(queries[index2]),Currency.currency.contains(queries[index2]),Currency.locations.contains(queries[index2]),Currency.exchanges.contains(queries[index2]), Currency.exchange_rate.contains(queries[index2])))
+        search_queryor4 += Company.query.filter(or_(Company.symbol.contains(queries[index2]),Company.name.contains(queries[index2]),Company.exchange.contains(queries[index2]),Company.currency.contains(queries[index2]),Company.location.contains(queries[index2]),Company.open_price.contains(queries[index2]),Company.previous_price.contains(queries[index2]),Company.percent_change.contains(queries[index2]),Company.year_high.contains(queries[index2]),Company.ask_price.contains(queries[index2]),Company.eps.contains(queries[index2]),Company.peg.contains(queries[index2]),Company.percent_change_fifty.contains(queries[index2]),Company.volume.contains(queries[index2]),Company.avg_volume.contains(queries[index2]),Company.market_cap.contains(queries[index2])))
+        index2 = index2 + 1
 
     return render_template('search.html', queries = queries, queriesand1 = search_queryand1, queriesand2 = search_queryand2, queriesand3 = search_queryand3, queriesand4 = search_queryand4, queriesor1 = search_queryor1, queriesor2= search_queryor2, queriesor3 =search_queryor3, queriesor4 = search_queryor4 ,title="Search")

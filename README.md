@@ -7,3 +7,4 @@ Repo for an http site [salehjones.com](http://salehjones.com) forked from this [
 #### Still hasn't been implemented nada
 #### To add
 #### To improve
+* Edit pics
