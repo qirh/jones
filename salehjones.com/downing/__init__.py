@@ -1,7 +1,7 @@
 #!/usr/bin/python2.7
 
 import os
-import requests
+#import requests
 from flask import Flask, render_template, request, json, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import or_
