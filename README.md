@@ -2,9 +2,12 @@
 Repo for an http site [salehjones.com](http://salehjones.com) forked from this [repo](https://github.com/kelvinhe273/IDB-Group7). For extensive documentation, see [wiki](https://github.com/kelvinhe273/IDB-Group7/wiki).
 
 ## Author's notes
-### salehjones.com
 #### Known issues
+* Apiary is down
 #### Still hasn't been implemented nada
 #### To add
 #### To improve
 * Edit pics
+* Add UML to readme
+* Add apiary info
+
