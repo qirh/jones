@@ -3,7 +3,7 @@ Repo for an http site [salehjones.com](http://salehjones.com) forked from this [
 
 ## Database Model (UML)
 
-<div style="text-align:center"><img src="uml.png" height = "450" width="650"></div>
+<div style="text-align:center"><img src="UML.png" height = "350" width="950"></div>
 
 ## Author's notes
 #### Known issues
