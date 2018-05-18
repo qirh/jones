@@ -12,4 +12,3 @@ Repo for an http site [salehjones.com](http://salehjones.com) forked from this [
 #### To add
 #### To improve
 * Edit pics
-* Add UML to readme
