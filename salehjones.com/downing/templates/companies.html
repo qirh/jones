@@ -10,7 +10,7 @@
         <h1 style = "font-weight : bold">Companies</h1>
       </div>
     </div>
-    <div class="table-responsive" > 
+    <div class="table-responsive" >
         <table id="companytable" class="table table-hover table-striped table-responsive table-bordered" >
             <thead>
                 <tr onchange="count_helper('currency', '', '/currencies/', 'cu ', true)">
@@ -35,18 +35,18 @@
             </tbody>
         </table>
     </div>
-</div> 
+</div>
 
 <!-- END PAGE CONTENT-->
 <!-- SCRIPT FOR SORTING-->
 <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
-<script type="text/javascript" 
-src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" 
-src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
+<script type="text/javascript"
+src="https://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript"
+src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script>
   $(document).ready(function() {
       $('#companytable').DataTable({ onSort:count_helper('currency', '', '/currencies/', 'cu ', true) });
@@ -54,4 +54,3 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 </script>
 <!-- END SCRIPT FOR SORTING-->
 {% endblock %}
-

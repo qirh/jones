@@ -22,7 +22,7 @@ body{
     <div class="row" style="padding:30px">
         <div class="col-md-2"></div>
         <div class="col-md-4">
-            <img id="company-pic" src="http://chart.finance.yahoo.com/z?s={{company.symbol}}&t=6m&q=l&l=on&z=s&p=m50,m200" style="max-width:100%">
+            <img id="company-pic" src="https://chart.finance.yahoo.com/z?s={{company.symbol}}&t=6m&q=l&l=on&z=s&p=m50,m200" style="max-width:100%">
         </div>
         <div class="col-md-1"></div>
 
@@ -44,7 +44,7 @@ body{
                             <tr>
                                 <th>Stock Exchange</th>
                                 <td><a href="/stockmarkets/{{company.foreign_id}}">{{company.exchange}}</td>
-                            </tr>  
+                            </tr>
                              <tr>
                                 <th>Percent Change</th>
                                 <td>{{company.percent_change}}</td>
@@ -60,11 +60,11 @@ body{
                             <tr>
                                 <th>Year High</th>
                                 <td>{{company.year_high}}</td>
-                            </tr> 
+                            </tr>
                             <tr>
                                 <th>EPS</th>
                                 <td>{{company.eps}}</td>
-                            </tr> 
+                            </tr>
                             <tr>
                                 <th>PEG</th>
                                 <td>{{company.peg}}</td>
@@ -72,7 +72,7 @@ body{
                             <tr>
                                 <th>Percent Change Fifty</th>
                                 <td>{{company.percent_change_fifty}}</td>
-                            </tr>    
+                            </tr>
                             <tr>
                                 <th>Volume</th>
                                 <td>{{company.volume}}</td>
@@ -80,11 +80,11 @@ body{
                             <tr>
                                 <th>Average Volume</th>
                                 <td>{{company.avg_volume}}</td>
-                            </tr> 
+                            </tr>
                             <tr>
                                 <th>Market Cap</th>
                                 <td>{{company.market_cap}}</td>
-                            </tr>                                     
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -93,6 +93,6 @@ body{
     </div>
 </div>
 <script>
-    onload = function(){count_helper('currency', '2', '/currencies/', 'cu ');} 
+    onload = function(){count_helper('currency', '2', '/currencies/', 'cu ');}
 </script>
 {% endblock %}
