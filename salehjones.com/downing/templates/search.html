@@ -4,7 +4,7 @@
     .tab-content.active{
         display: block;
     }
-            
+
     .tab-content.hide{
         display: none;
     }
@@ -49,14 +49,14 @@
                             <h1 style = "font-weight : bold">Location</h1>
                         </div>
                     </div>
-                    <div class="table-responsive"> 
+                    <div class="table-responsive">
                         <table id="locationtable" class="table table-hover table-striped table-responsive table-bordered">
                             <thead>
                                 <tr>
                                     <th id="name">Name</th>
                                     <th id="capital">Capital of Country</th>
                                     <th id="gdp">GDP</th>
-                                    <th id="iso">ISO Symbol</th>                                    
+                                    <th id="iso">ISO Symbol</th>
                                     <th id="location">Currency</th>
                                     <th id="exchange">Exchange</th>
                                 </tr>
@@ -75,7 +75,7 @@
                             </tbody>
                         </table>
                     </div>
-                </div> 
+                </div>
                 {% endif %}
                 {% if queriesand2 %}
                 <div class="container-fluid">
@@ -85,7 +85,7 @@
                             <h1 style = "font-weight : bold">Exchange</h1>
                         </div>
                     </div>
-                    <div class="table-responsive"> 
+                    <div class="table-responsive">
                         <table id="exchangetable" class="table table-hover table-striped table-responsive table-bordered">
                             <thead>
                                 <tr>
@@ -119,7 +119,7 @@
                             <h1 style = "font-weight : bold">Currency</h1>
                         </div>
                     </div>
-                    <div class="table-responsive"> 
+                    <div class="table-responsive">
                         <table id="currencytable" class="table table-hover table-striped table-responsive table-bordered">
                             <thead>
                                 <tr>
@@ -154,7 +154,7 @@
                             <h1 style = "font-weight : bold">Company</h1>
                         </div>
                     </div>
-                    <div class="table-responsive"> 
+                    <div class="table-responsive">
                         <table id="companytable" class="table table-hover table-striped table-responsive table-bordered">
                             <thead>
                                 <tr>
@@ -206,7 +206,7 @@
         </div>
         <!-- THIS IS THE OR TABLES -->
         <div id="ortab" class="tab-content hide">
-            
+
                 <h1 class = "or" style ="text-align:center;"> Search For OR: </h1>
                 {% for query in queries %}
                 <script>
@@ -233,14 +233,14 @@
                             <h1 style = "font-weight : bold">Location</h1>
                         </div>
                     </div>
-                    <div class="table-responsive"> 
+                    <div class="table-responsive">
                         <table id="locationtableor" class="table table-hover table-striped table-responsive table-bordered">
                             <thead>
                                 <tr>
                                     <th id="name">Name</th>
                                     <th id="capital">Capital of Country</th>
                                     <th id="gdp">GDP</th>
-                                    <th id="iso">ISO Symbol</th>                                    
+                                    <th id="iso">ISO Symbol</th>
                                     <th id="location">Currency</th>
                                     <th id="exchange">Exchange</th>
                                 </tr>
@@ -259,7 +259,7 @@
                             </tbody>
                         </table>
                     </div>
-                </div> 
+                </div>
                 {% endif %}
                 {% if queriesor2 %}
                 <div class="container-fluid">
@@ -269,7 +269,7 @@
                             <h1 style = "font-weight : bold">Exchange</h1>
                         </div>
                     </div>
-                    <div class="table-responsive"> 
+                    <div class="table-responsive">
                         <table id="exchangetableor" class="table table-hover table-striped table-responsive table-bordered">
                             <thead>
                                 <tr>
@@ -303,7 +303,7 @@
                             <h1 style = "font-weight : bold">Currency</h1>
                         </div>
                     </div>
-                    <div class="table-responsive"> 
+                    <div class="table-responsive">
                         <table id="currencytableor" class="table table-hover table-striped table-responsive table-bordered">
                             <thead>
                                 <tr>
@@ -337,7 +337,7 @@
                             <h1 style = "font-weight : bold">Company</h1>
                         </div>
                     </div>
-                    <div class="table-responsive"> 
+                    <div class="table-responsive">
                         <table id="companytableor" class="table table-hover table-striped table-responsive table-bordered">
                             <thead>
                                 <tr>
@@ -396,13 +396,13 @@
 <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
-<script type="text/javascript" 
-src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" 
-src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
+<script type="text/javascript"
+src="https://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript"
+src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
 <script>
   $(document).ready(function() {
@@ -436,4 +436,3 @@ $(document).ready(function() {
       });
 </script>
 {% endblock %}
-
