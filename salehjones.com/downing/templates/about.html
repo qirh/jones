@@ -221,7 +221,7 @@
             <h5 ><b># Commits: </b>330</h5>
             <h5 ><b># Issues: </b>73</h5>
             <h5 ><b># Unit Tests: </b>13</h5>
-            <!--button id="test-button" class="button btn-info"><h5 style = "color: black">Run Tests</h5></button-->
+            <button id="test-button" class="button btn-info"><h5 style = "color: black">Run Tests</h5></button>
         </div>
     </div>
     <div id='test_results' style='display:none;'></div>
@@ -237,12 +237,12 @@
                 alert(data);
             })
             .fail(function(jqXHR, textStatus, errorThrown){
-                $('#test_results').text('An error occur red running the tests');
+                $('#test_results').text('An error occurred running the tests');
                 $('#test_results').show();
             })
         })
     </script>
-    <!-- <form action = "https://127.0.0.1:5000/api/run_tests">
+    <!--form action = "https://127.0.0.1:5000/api/run_tests">
         <button class="btn btn-info" type="submit" value="">Run Tests</button>
-    </form> -->
+    </form-->
 {% endblock %}

@@ -86,7 +86,7 @@ def market (id):
 @app.route ( '/api/run_tests')
 def tests ():
     try:
-        process = subprocess.Popen(['python3', '/var/www/FlaskApp/DowningJones/tests.py'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        process = subprocess.Popen(['python3', '/var/www/jones/salehjones.com/downing/tests.py'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         out, err = process.communicate()
 
         return str(out) + str(err)
