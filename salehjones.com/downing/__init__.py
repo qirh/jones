@@ -1,90 +1,88 @@
 #!/usr/bin/python2.7
 
-import os
-#import requests
 from flask import Flask, render_template, request, json, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import or_
 import subprocess
 
-app = Flask ( __name__ )
+app = Flask (__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 db = SQLAlchemy(app)
 
 from models import *
 
-@app.route ( '/' )
-def homepage ():
+@app.route ('/')
+def homepage():
     return render_template('index.html', title='Downing Jones')
 
-@app.route ( '/index' )
-def index ():
+@app.route('/index')
+def index():
     return render_template('index.html', title='Downing Jones')
 
-@app.route ( '/about' )
-def about ():
+@app.route('/about')
+def about():
     return render_template('about.html', title='About')
 
-@app.route ( '/companies' )
-def companies ():
+@app.route('/companies')
+def companies():
     companies = Company.query.distinct(Company.symbol)
     return render_template('companies.html',
                            title='Companies',
                            companies=companies)
 
-@app.route ('/companies/<id>')
-def company (id):
+@app.route('/companies/<id>')
+def company(id):
     company = Company.query.get(id)
     return render_template('company.html',
                            title=company.name,
                            company=company)
 
-@app.route ( '/currencies' )
-def currencies ():
+@app.route('/currencies')
+def currencies():
     currencies = Currency.query.distinct(Currency.currency)
     return render_template('currencies.html',
                            title='Currencies',
                            currencies=currencies)
 
-@app.route ( '/currencies/<id>' )
-def currency (id):
+@app.route ('/currencies/<id>')
+def currency(id):
     currency = Currency.query.get(id)
     return render_template('currency.html',
                            title=currency.name,
                            currency=currency)
 
-@app.route ( '/locations' )
-def locations ():
+@app.route('/locations')
+def locations():
     locations = Location.query.distinct(Location.name)
     return render_template('locations.html',
                            title='Locations',
                            locations=locations)
 
-@app.route ( '/locations/<id>' )
-def location (id):
+@app.route('/locations/<id>')
+def location(id):
     location = Location.query.get(id)
     return render_template('location.html',
                            title=location.name,
                            location=location)
 
-@app.route ( '/stockmarkets' )
-def stockmarkets ():
+@app.route ('/stockmarkets')
+def stockmarkets():
     markets = Exchange.query.distinct(Exchange.name)
     return render_template('stockmarkets.html',
                            title='Exchanges',
                            markets=markets)
 
-@app.route ( '/stockmarkets/<id>' )
-def market (id):
+@app.route ('/stockmarkets/<id>')
+def market(id):
     market = Exchange.query.get(id)
     return render_template('stockmarket.html',
                            title=market.name,
                            market=market)
 
 
-@app.route ( '/api/run_tests')
-def tests ():
+@app.route('/api/run_tests')
+def tests():
     try:
         process = subprocess.Popen(['python3', '/var/www/jones/salehjones.com/downing/tests.py'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         out, err = process.communicate()
@@ -93,7 +91,7 @@ def tests ():
     except Exception as exc:
         return str(exc)
 
-@app.route ('/api/exchange/<int:id>', methods=['GET'])
+@app.route('/api/exchange/<int:id>', methods=['GET'])
 def get_exchange(id):
     market = Exchange.query.get(id)
     return jsonify(id = id,
@@ -103,7 +101,7 @@ def get_exchange(id):
                    location = market.location,
                    currency = market.currency)
 
-@app.route ('/api/location/<int:id>', methods=['GET'])
+@app.route('/api/location/<int:id>', methods=['GET'])
 def get_location(id):
     location = Location.query.get(id)
     return jsonify(id = id,
@@ -114,7 +112,7 @@ def get_location(id):
                    location = location.location_exchange,
                    currency = location.currency)
 
-@app.route ('/api/currency/<int:id>', methods=['GET'])
+@app.route('/api/currency/<int:id>', methods=['GET'])
 def get_currency(id):
     currency = Currency.query.get(id)
     return jsonify(id = id,
@@ -124,7 +122,7 @@ def get_currency(id):
                    locations = currency.locations,
                    currency = currency.currency)
 
-@app.route ('/api/company/<int:id>', methods=['GET'])
+@app.route('/api/company/<int:id>', methods=['GET'])
 def get_company(id):
     company = Company.query.get(id)
     return jsonify(id = id,
@@ -146,7 +144,7 @@ def get_company(id):
                    avg_volume = company.avg_volume,
                    market_cap = company.market_cap)
 
-@app.route ('/api', methods=['GET'])
+@app.route('/api', methods=['GET'])
 def get_entry_points():
     return jsonify(exchange_url = "/exchange",
                    company_url = "/company",
@@ -158,10 +156,8 @@ def get_entry_points():
 Minor routing changes for POST request
 """
 
-@app.route ('/search', methods=['GET', 'POST'])
-def search ():
-    queries = {}
-    andqueries = {}
+@app.route('/search', methods=['GET', 'POST'])
+def search():
     hackString = ""
     url = request.form['url']
     thisString = url.split('=')
