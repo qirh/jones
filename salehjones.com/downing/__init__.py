@@ -33,7 +33,7 @@ def companies ():
                            title='Companies',
                            companies=companies)
 
-@app.route ( '/companies/<id>' )
+@app.route ('/companies/<id>')
 def company (id):
     company = Company.query.get(id)
     return render_template('company.html',
