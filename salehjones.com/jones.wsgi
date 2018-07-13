@@ -6,8 +6,6 @@ import logging
 PROJECT_DIR = "/var/www/jones/salehjones.com"
 
 logging.basicConfig(stream=sys.stderr)
-print(sys.version)
-print(sys.path)
 sys.path.insert(0, PROJECT_DIR)
 
 activate_this = os.path.join(PROJECT_DIR, 'venv', 'bin', 'activate_this.py')
