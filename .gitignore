@@ -1,5 +1,6 @@
 .DS_Store
 *.wsgi
+jones.wsgi
 xcuserdata/
 private/
 *~
