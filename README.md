@@ -1,8 +1,5 @@
 # Downing Jones [![MIT license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/qirh/jones/master/LICENSE)
 
-1. remove wsgi.
-2. public.
-
 **Website: [salehjones.com](salehjones.com)**
 
 **Documentation: [Git Wiki](https://github.com/qirh/jones/wiki)**
