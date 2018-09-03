@@ -4,7 +4,7 @@
 
 **Documentation: [Git Wiki](https://github.com/qirh/jones/wiki)**
 
-**API Documentation: [Apiary](https://salehjones.docs.apiary.io/)**
+**API Documentation: [Apiary](https://salehjones.docs.apiary.io)**
 
 Full stack web application that displays and compares stock market information from different markets simultaneously.
 
