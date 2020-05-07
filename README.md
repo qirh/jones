@@ -1,5 +1,7 @@
 # Downing Jones [![MIT license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/qirh/jones/master/LICENSE)
 
+**update may 2020:** website has been taken down
+
 **Website: [salehjones.com](salehjones.com)**
 
 **Documentation: [Git Wiki](https://github.com/qirh/jones/wiki)**
